@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "../context/ThemeContext";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -35,12 +35,95 @@ function Navbar() {
   const { language, toggleLanguage } = useLanguage();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+  const [isScrolling, setIsScrolling] = useState(false);
 
   const isEnglish = language === "en";
 
+  // ========================================
+  // CLOSE MOBILE MENU
+  // ========================================
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+
+  // ========================================
+  // NAVIGATION CLICK
+  // ========================================
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string,
+  ) => {
+    e.preventDefault();
+
+    const section = document.getElementById(sectionId);
+
+    if (!section) return;
+
+    // Langsung ubah active indicator
+    setActiveSection(sectionId);
+
+    // Hentikan sementara scroll spy
+    // agar tidak kembali ke section sebelumnya
+    setIsScrolling(true);
+
+    // Smooth scroll ke section tujuan
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    // Setelah animasi smooth scroll selesai,
+    // aktifkan kembali scroll spy
+    setTimeout(() => {
+      setIsScrolling(false);
+      setActiveSection(sectionId);
+    }, 800);
+
+    // Tutup mobile menu
+    closeMenu();
+  };
+
+  // ========================================
+  // SCROLL SPY
+  // ========================================
+  useEffect(() => {
+    const sections = navItems
+      .map((item) => document.getElementById(item.id))
+      .filter(Boolean) as HTMLElement[];
+
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Jangan ubah active section ketika
+        // smooth scroll sedang berlangsung
+        if (isScrolling) return;
+
+        const visibleSections = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        const visibleSection = visibleSections[0];
+
+        if (visibleSection) {
+          setActiveSection(visibleSection.target.id);
+        }
+      },
+      {
+        rootMargin: "-80px 0px -55% 0px",
+        threshold: [0.1, 0.25, 0.5],
+      },
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [isScrolling]);
 
   return (
     <header
@@ -54,11 +137,12 @@ function Navbar() {
       }}
     >
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
-
-        {/* Logo */}
+        {/* ========================================
+            LOGO
+        ======================================== */}
         <a
           href="#home"
-          onClick={closeMenu}
+          onClick={(e) => handleNavClick(e, "home")}
           className="group flex items-center gap-2"
         >
           <span className="text-sm font-bold tracking-[0.3em]">
@@ -68,31 +152,39 @@ function Navbar() {
           <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.8)] transition-transform duration-300 group-hover:scale-125" />
         </a>
 
-        {/* Desktop Navigation */}
+        {/* ========================================
+            DESKTOP NAVIGATION
+        ======================================== */}
         <div className="hidden items-center gap-8 md:flex">
-          {navItems.map((item, index) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className={`relative py-2 text-sm transition-colors duration-300 ${
-                index === 0
-                  ? "text-[var(--foreground)]"
-                  : "text-[var(--muted)] hover:text-[var(--foreground)]"
-              }`}
-            >
-              {isEnglish ? item.en : item.idn}
+          {navItems.map((item) => {
+            const isActive = activeSection === item.id;
 
-              {/* Active indicator */}
-              {index === 0 && (
-                <span className="absolute bottom-0 left-0 h-px w-full bg-emerald-400" />
-              )}
-            </a>
-          ))}
+            return (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={(e) => handleNavClick(e, item.id)}
+                className={`relative py-2 text-sm transition-colors duration-300 ${
+                  isActive
+                    ? "text-[var(--foreground)]"
+                    : "text-[var(--muted)] hover:text-[var(--foreground)]"
+                }`}
+              >
+                {isEnglish ? item.en : item.idn}
+
+                {/* Active Indicator */}
+                {isActive && (
+                  <span className="absolute bottom-0 left-0 h-px w-full bg-emerald-400" />
+                )}
+              </a>
+            );
+          })}
         </div>
 
-        {/* Desktop Controls */}
+        {/* ========================================
+            DESKTOP CONTROLS
+        ======================================== */}
         <div className="hidden items-center gap-3 md:flex">
-
           {/* Language */}
           <button
             type="button"
@@ -105,23 +197,17 @@ function Navbar() {
           >
             <span
               className={
-                language === "id"
-                  ? "text-emerald-400"
-                  : "text-[var(--muted)]"
+                language === "id" ? "text-emerald-400" : "text-[var(--muted)]"
               }
             >
               ID
             </span>
 
-            <span className="mx-1.5 text-[var(--muted)]">
-              /
-            </span>
+            <span className="mx-1.5 text-[var(--muted)]">/</span>
 
             <span
               className={
-                language === "en"
-                  ? "text-emerald-400"
-                  : "text-[var(--muted)]"
+                language === "en" ? "text-emerald-400" : "text-[var(--muted)]"
               }
             >
               EN
@@ -144,19 +230,22 @@ function Navbar() {
           {/* Contact */}
           <a
             href="#contact"
+            onClick={(e) => handleNavClick(e, "contact")}
             className="ml-2 rounded-lg border px-5 py-2.5 text-sm font-medium transition-all duration-300 hover:border-emerald-400/50 hover:bg-emerald-400/10"
             style={{
               borderColor: "var(--border)",
             }}
           >
             {isEnglish ? "Let's Talk" : "Hubungi Saya"}
+
             <span className="ml-2">↗</span>
           </a>
         </div>
 
-        {/* Mobile Controls */}
+        {/* ========================================
+            MOBILE CONTROLS
+        ======================================== */}
         <div className="flex items-center gap-2 md:hidden">
-
           {/* Mobile Theme */}
           <button
             type="button"
@@ -215,12 +304,12 @@ function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* ========================================
+          MOBILE MENU
+      ======================================== */}
       <div
         className={`overflow-hidden border-t transition-all duration-300 md:hidden ${
-          isMenuOpen
-            ? "max-h-96 opacity-100"
-            : "max-h-0 opacity-0"
+          isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
         style={{
           borderColor: "var(--border)",
@@ -231,26 +320,34 @@ function Navbar() {
         }}
       >
         <div className="mx-auto max-w-7xl px-6 py-5">
-
           <div className="flex flex-col">
-            {navItems.map((item) => (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                onClick={closeMenu}
-                className="border-b py-4 text-sm text-[var(--muted)] transition-colors hover:text-[var(--foreground)]"
-                style={{
-                  borderColor: "var(--border)",
-                }}
-              >
-                {isEnglish ? item.en : item.idn}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isActive = activeSection === item.id;
+
+              return (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  onClick={(e) => handleNavClick(e, item.id)}
+                  className={`border-b py-4 text-sm transition-colors ${
+                    isActive
+                      ? "text-emerald-400"
+                      : "text-[var(--muted)] hover:text-[var(--foreground)]"
+                  }`}
+                  style={{
+                    borderColor: "var(--border)",
+                  }}
+                >
+                  {isEnglish ? item.en : item.idn}
+                </a>
+              );
+            })}
           </div>
 
+          {/* Mobile Contact */}
           <a
             href="#contact"
-            onClick={closeMenu}
+            onClick={(e) => handleNavClick(e, "contact")}
             className="mt-5 block rounded-lg bg-emerald-400 px-5 py-3 text-center text-sm font-bold text-black transition hover:bg-emerald-300"
           >
             {isEnglish ? "Let's Talk ↗" : "Hubungi Saya ↗"}

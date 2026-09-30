@@ -58,8 +58,7 @@ function Hero() {
 
             <a
               href="/cv.pdf"
-              target="_blank"
-              rel="noreferrer"
+              download="CV-Willybrodus-Stephanus-Da-Costa.pdf"
               className="group rounded-lg border px-6 py-3.5 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/5"
               style={{
                 borderColor: "var(--border)",

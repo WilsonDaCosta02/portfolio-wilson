@@ -45,19 +45,19 @@ export const translations = {
         sijalan: {
           category: "Web Application",
           description:
-            "Road Management Information System for monitoring road conditions.",
+            "Web-based road damage reporting and monitoring system with automatic location tracking for identifying road conditions.",
         },
 
-        somya: {
+        eztix: {
           category: "Website",
           description:
-            "Company website built with WordPress with a focus on modern and responsive design.",
+            "Concert ticketing website for browsing events and purchasing tickets online.",
         },
 
-        ai: {
-          category: "AI & Automation",
+        travelPlanner: {
+          category: "Mobile Application",
           description:
-            "AI chatbot integrated with n8n and knowledge base for intelligent information retrieval.",
+            "Travel planning mobile application for searching and finding flight tickets based on travel needs.",
         },
 
         teashop: {
@@ -176,19 +176,18 @@ export const translations = {
         sijalan: {
           category: "Aplikasi Web",
           description:
-            "Sistem Informasi Manajemen Jalan untuk memantau kondisi jalan.",
+            "Sistem pelaporan dan monitoring jalan rusak berbasis web dengan pelacakan titik lokasi otomatis untuk mengidentifikasi kondisi jalan.",
         },
-
-        somya: {
+        eztix: {
           category: "Website",
           description:
-            "Website perusahaan berbasis WordPress dengan fokus pada desain modern dan responsif.",
+            "Website penjualan tiket konser untuk melihat event dan melakukan pembelian tiket secara online.",
         },
 
-        ai: {
-          category: "AI & Automasi",
+        travelPlanner: {
+          category: "Aplikasi Mobile",
           description:
-            "Chatbot AI yang terintegrasi dengan n8n dan knowledge base untuk pencarian informasi secara cerdas.",
+            "Aplikasi mobile travel planner untuk mencari dan menemukan tiket penerbangan sesuai kebutuhan perjalanan.",
         },
 
         teashop: {
