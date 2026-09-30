@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --background: #080c0b;
+  --foreground: #f5f5f5;
+  --muted: #8a8f8c;
+  --surface: #101615;
+  --border: rgba(255, 255, 255, 0.08);
+  --accent: #34d399;
+}
+
+:root.light {
+  --background: #f5f7f6;
+  --foreground: #101412;
+  --muted: #68716c;
+  --surface: #ffffff;
+  --border: rgba(0, 0, 0, 0.08);
+  --accent: #059669;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--background);
+  color: var(--foreground);
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
