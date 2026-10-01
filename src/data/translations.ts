@@ -70,11 +70,16 @@ export const translations = {
 
     about: {
       label: "ABOUT ME",
-      title: "I'm a developer who enjoys turning ideas into digital products.",
+
+      titleStart: "I'm a developer who enjoys turning ideas into",
+      titleHighlight: "digital products.",
+
       description:
         "I'm an Information Technology graduate with a strong interest in web and mobile development. I enjoy building user-focused applications, exploring new technologies, and solving real-world problems through code.",
+
       descriptionSecond:
         "Always excited to learn, collaborate, and create meaningful impact through technology.",
+
       moreAbout: "More About Me",
 
       roles: {
@@ -200,12 +205,16 @@ export const translations = {
 
     about: {
       label: "TENTANG SAYA",
-      title:
-        "Saya adalah developer yang senang mengubah ide menjadi produk digital.",
+
+      titleStart: "Saya adalah developer yang senang mengubah ide menjadi",
+      titleHighlight: "produk digital.",
+
       description:
         "Saya merupakan lulusan Teknologi Informasi yang memiliki ketertarikan kuat pada pengembangan web dan mobile. Saya senang membangun aplikasi yang berfokus pada pengguna, mempelajari teknologi baru, dan menyelesaikan permasalahan nyata melalui kode.",
+
       descriptionSecond:
         "Selalu antusias untuk belajar, berkolaborasi, dan menciptakan dampak yang bermakna melalui teknologi.",
+
       moreAbout: "Tentang Saya",
 
       roles: {
