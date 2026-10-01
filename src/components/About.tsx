@@ -1,46 +1,57 @@
 import React from "react";
-import {
-  Code2,
-  Smartphone,
-  Lightbulb,
-  Atom,
-  Braces,
-  Database,
-  GitBranch,
-  Workflow,
-  Globe,
-  Palette,
-} from "lucide-react";
+import { Code2, Smartphone, Lightbulb } from "lucide-react";
 
 import { useLanguage } from "../context/LanguageContext";
 
+import reactIcon from "../assets/icons/react.png";
+import typescriptIcon from "../assets/icons/typescript.png";
+import javascriptIcon from "../assets/icons/javascript.png";
+import tailwindIcon from "../assets/icons/tailwind.png";
+import htmlCssIcon from "../assets/icons/html-css.png";
+
+import nodejsIcon from "../assets/icons/nodejs.png";
+import expressIcon from "../assets/icons/express.png";
+import mysqlIcon from "../assets/icons/mysql.png";
+import mongodbIcon from "../assets/icons/mongodb.png";
+import restApiIcon from "../assets/icons/rest-api.png";
+
+import flutterIcon from "../assets/icons/flutter.png";
+import dartIcon from "../assets/icons/dart.png";
+
+import gitIcon from "../assets/icons/git.png";
+import n8nIcon from "../assets/icons/n8n.png";
+import wordpressIcon from "../assets/icons/wordpress.png";
+import figmaIcon from "../assets/icons/figma.png";
+import androidStudioIcon from "../assets/icons/android-studio.png";
+
 const techStack = {
   frontend: [
-    { name: "React", icon: Atom },
-    { name: "TypeScript", icon: Braces },
-    { name: "JavaScript", icon: Code2 },
-    { name: "Tailwind CSS", icon: Palette },
-    { name: "HTML & CSS", icon: Globe },
+    { name: "React", icon: reactIcon },
+    { name: "TypeScript", icon: typescriptIcon },
+    { name: "JavaScript", icon: javascriptIcon },
+    { name: "Tailwind CSS", icon: tailwindIcon },
+    { name: "HTML & CSS", icon: htmlCssIcon },
   ],
 
   backend: [
-    { name: "Node.js", icon: Code2 },
-    { name: "Express.js", icon: Braces },
-    { name: "MySQL", icon: Database },
-    { name: "REST API", icon: Globe },
+    { name: "Node.js", icon: nodejsIcon },
+    { name: "Express.js", icon: expressIcon },
+    { name: "MySQL", icon: mysqlIcon },
+    { name: "MongoDB", icon: mongodbIcon },
+    { name: "REST API", icon: restApiIcon },
   ],
 
   mobile: [
-    { name: "Flutter", icon: Smartphone },
-    { name: "Dart", icon: Code2 },
+    { name: "Flutter", icon: flutterIcon },
+    { name: "Dart", icon: dartIcon },
   ],
 
   tools: [
-    { name: "Git", icon: GitBranch },
-    { name: "n8n", icon: Workflow },
-    { name: "WordPress", icon: Globe },
-    { name: "Shopify", icon: Globe },
-    { name: "Figma", icon: Palette },
+    { name: "Git", icon: gitIcon },
+    { name: "n8n", icon: n8nIcon },
+    { name: "WordPress", icon: wordpressIcon },
+    { name: "Figma", icon: figmaIcon },
+    { name: "Android Studio", icon: androidStudioIcon },
   ],
 };
 
@@ -276,7 +287,7 @@ interface TechColumnProps {
   title: string;
   items: {
     name: string;
-    icon: React.ElementType;
+    icon: string;
   }[];
 }
 
@@ -293,14 +304,12 @@ const TechColumn: React.FC<TechColumnProps> = ({ title, items }) => {
 
         <div className="space-y-2.5">
           {items.map((item) => {
-            const Icon = item.icon;
-
             return (
               <div key={item.name} className="flex items-center gap-3">
-                <Icon
-                  size={17}
-                  strokeWidth={1.8}
-                  className="text-emerald-400"
+                <img
+                  src={item.icon}
+                  alt={item.name}
+                  className="h-[18px] w-[18px] object-contain"
                 />
 
                 <span
