@@ -115,7 +115,7 @@ const Contact: React.FC = () => {
                 <img
                   src={githubIcon}
                   alt="GitHub"
-                  className="h-6 w-6 object-contain"
+                  className="h-15 w-15 object-contain"
                 />
                 <span className="text-sm font-semibold">GitHub</span>
               </div>
@@ -142,7 +142,7 @@ const Contact: React.FC = () => {
                 <img
                   src={glintsIcon}
                   alt="Glints"
-                  className="h-6 w-6 object-contain"
+                  className="h-15 w-15 object-contain"
                 />
                 <span className="text-sm font-semibold">Glints</span>
               </div>
@@ -169,7 +169,7 @@ const Contact: React.FC = () => {
                 <img
                   src={instagramIcon}
                   alt="Instagram"
-                  className="h-6 w-6 object-contain"
+                  className="h-15 w-15 object-contain"
                 />
                 <span className="text-sm font-semibold">Instagram</span>
               </div>
