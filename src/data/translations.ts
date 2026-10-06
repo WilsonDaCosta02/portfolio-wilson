@@ -146,7 +146,7 @@ export const translations = {
       cardTitle: "Open for Work",
       cardDescription:
         "My inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
-      getInTouch: "Get in Touch",
+      getInTouch: "WhatsApp Me",
       emailMe: "Email Me",
     },
 
@@ -298,7 +298,7 @@ export const translations = {
       cardTitle: "Terbuka untuk Bekerja",
       cardDescription:
         "Kotak masuk saya selalu terbuka. Baik ada pertanyaan, penawaran proyek, atau sekadar menyapa, saya siap merespons secepatnya!",
-      getInTouch: "Hubungi Saya",
+      getInTouch: "WhatsApp Saya",
       emailMe: "Kirim Email",
     },
 

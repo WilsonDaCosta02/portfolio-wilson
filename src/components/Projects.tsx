@@ -32,7 +32,7 @@ function Projects() {
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* ================= HEADER ================= */}
-        <div className="-translate-y-15 mb-8 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="-translate-y-8 mb-8 flex flex-col gap-6 lg:-translate-y-15 lg:flex-row lg:items-end lg:justify-between">
           <div>
             {/* Small label */}
             <div className="mb-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-400">

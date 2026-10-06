@@ -79,16 +79,22 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {/* TOMBOL 1: WHATSAPP (Membuka aplikasi WA dengan pesan otomatis) */}
               <a
-                href="mailto:wilsondacosta0205@gmail.com"
+                href="https://wa.me/6289670001521?text=Halo%20Wilson,%20saya%20tertarik%20untuk%20berdiskusi%20tentang%20proyek."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg bg-emerald-400 px-4 py-3 text-xs font-semibold text-black transition-transform duration-200 hover:scale-[1.02] hover:bg-emerald-300 text-center"
               >
                 <span>{t.contact.getInTouch}</span>
                 <ArrowUpRight size={16} className="shrink-0" />
               </a>
 
+              {/* TOMBOL 2: EMAIL (Membuka Gmail Web Compose) */}
               <a
-                href="mailto:wilsondacosta0205@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=wilsondacosta0205@gmail.com&su=Tawaran%20Proyek%20/%20Kolaborasi"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg border px-4 py-3 text-xs font-semibold transition hover:border-emerald-400 hover:text-emerald-400 text-center"
                 style={{ borderColor: "var(--border)" }}
               >
@@ -101,7 +107,7 @@ const Contact: React.FC = () => {
           <div className="flex h-full flex-col justify-between gap-3">
             {/* GITHUB */}
             <a
-              href="https://github.com"
+              href="https://github.com/WilsonDaCosta02"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex flex-1 min-h-[60px] items-center justify-between rounded-xl border px-5 py-3 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/40"
@@ -128,7 +134,7 @@ const Contact: React.FC = () => {
 
             {/* GLINTS */}
             <a
-              href="https://glints.com"
+              href="https://glints.com/id/profiles/willybrodus-stephanus-da-costa"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex flex-1 min-h-[60px] items-center justify-between rounded-xl border px-5 py-3 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/40"
@@ -155,7 +161,7 @@ const Contact: React.FC = () => {
 
             {/* INSTAGRAM */}
             <a
-              href="https://instagram.com"
+              href="https://instagram.com/wilsondacosta_"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex flex-1 min-h-[60px] items-center justify-between rounded-xl border px-5 py-3 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/40"

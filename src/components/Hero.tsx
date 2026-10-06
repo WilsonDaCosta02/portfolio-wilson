@@ -144,7 +144,7 @@ function Hero() {
             </div>
 
             {/* Quote */}
-            <div className="absolute right-0 top-10 z-20 hidden w-40 lg:block xl:w-44">
+            <div className="absolute left-0 top-40 z-20 w-40 lg:left-auto lg:right-0 lg:top-10 xl:w-44">
               <span className="block text-4xl leading-[0.3] text-emerald-400">
                 “
               </span>
@@ -161,7 +161,7 @@ function Hero() {
 
             {/* Current status */}
             <div
-              className="absolute bottom-24 right-0 z-20 hidden rounded-xl border px-4 py-3 backdrop-blur-xl lg:block"
+              className="absolute bottom-25 right-0 z-20 rounded-xl border px-4 py-3 backdrop-blur-xl lg:bottom-24"
               style={{
                 backgroundColor:
                   "color-mix(in srgb, var(--surface) 90%, transparent)",

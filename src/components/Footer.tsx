@@ -14,12 +14,12 @@ const Footer: React.FC = () => {
         borderColor: "var(--border)",
       }}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-8 lg:px-8">
+      <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-8 sm:flex-row sm:items-center sm:justify-between lg:px-8">
         {/* LEFT */}
         <div className="flex items-center gap-2">
           <span className="text-sm font-bold tracking-[0.15em]">WILSON</span>
 
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+          <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />
 
           <span
             className="text-xs"
@@ -33,17 +33,22 @@ const Footer: React.FC = () => {
 
         {/* RIGHT */}
         <div
-          className="flex items-center gap-2 text-xs"
+          className="flex w-full items-center justify-between gap-4 text-xs sm:w-auto sm:justify-end"
           style={{
             color: "var(--muted)",
           }}
         >
-          <span>{t.footer.tagline}</span>
-          <span>© 2025 Wilson da Costa.</span>
+          <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
+            <span>{t.footer.tagline}</span>
+
+            <span className="hidden sm:inline">•</span>
+
+            <span>© 2025 Wilson da Costa.</span>
+          </div>
 
           <a
             href="#home"
-            className="ml-4 flex h-10 w-10 items-center justify-center rounded-full border transition hover:border-emerald-400 hover:text-emerald-400"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border transition hover:border-emerald-400 hover:text-emerald-400"
             style={{
               borderColor: "var(--border)",
             }}

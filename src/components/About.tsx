@@ -72,7 +72,7 @@ export const About: React.FC = () => {
           ABOUT ME
       ======================================== */}
 
-      <div className="-translate-y-10 mx-auto max-w-7xl px-6 py-10 lg:px-8 lg:py-14">
+      <div className="translate-y-3 mx-auto max-w-7xl px-6 py-10 lg:-translate-y-10 lg:px-8 lg:py-14">
         <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_1fr_1.25fr]">
           {/* LEFT - TITLE */}
           <div>
@@ -112,6 +112,11 @@ export const About: React.FC = () => {
 
             <button
               type="button"
+              onClick={() => {
+                document.getElementById("experience")?.scrollIntoView({
+                  behavior: "smooth",
+                });
+              }}
               className="mt-5 inline-flex items-center gap-2 rounded-md border px-4 py-2.5 text-xs font-medium transition-all duration-300 hover:border-emerald-400 hover:bg-emerald-400/10 hover:text-emerald-400"
               style={{
                 borderColor: "var(--border)",
@@ -259,7 +264,7 @@ export const About: React.FC = () => {
 
               {/* Text */}
               <p
-                className="text-sm leading-6"
+                className="max-w-[260px] text-sm leading-6 lg:max-w-none"
                 style={{
                   color: "var(--muted)",
                 }}

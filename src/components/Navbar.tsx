@@ -143,13 +143,13 @@ function Navbar() {
         <a
           href="#home"
           onClick={(e) => handleNavClick(e, "home")}
-          className="group flex items-center gap-2"
+          className="group flex min-w-0 items-center gap-1.5 sm:gap-2"
         >
-          <span className="text-sm font-bold tracking-[0.3em]">
+          <span className="whitespace-nowrap text-[10px] font-bold tracking-[0.12em] sm:text-sm sm:tracking-[0.3em]">
             Willybrodus Stephanus Da Costa
           </span>
 
-          <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.8)] transition-transform duration-300 group-hover:scale-125" />
+          <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.8)] transition-transform duration-300 group-hover:scale-125" />
         </a>
 
         {/* ========================================
