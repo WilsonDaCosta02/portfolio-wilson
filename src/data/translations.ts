@@ -111,12 +111,30 @@ export const translations = {
     experience: {
       label: "EXPERIENCE",
       title: "My Journey",
-
-      current: {
-        year: "Now",
-        role: "Open for Opportunities",
-        description:
-          "Looking for a full-time opportunity to contribute, learn, and grow as a Fullstack Developer.",
+      subtitle:
+        "A timeline of my professional journey, from learning and gaining experience to building real-world projects.",
+      cards: {
+        intern: {
+          description:
+            "Completed Independent Study in Frontend & Backend Web Development. Built modern web applications, integrated APIs, and implemented best practices in software engineering.",
+        },
+        pkl: {
+          role: "IT / Web Development",
+          company: "PKL",
+          description:
+            "Worked on web and system development projects, including SI Jalan and internal tools. Gained experience in frontend, backend, and database integration.",
+        },
+        current: {
+          role: "Open for Opportunities",
+          year: "Now",
+          company: "Available",
+          description:
+            "Looking for a full-time opportunity to contribute, learn, and grow as a Fullstack Developer.",
+        },
+      },
+      bottom: {
+        period: "2024 — Present",
+        next: "Continue to Contact",
       },
     },
 
@@ -246,12 +264,26 @@ export const translations = {
     experience: {
       label: "PENGALAMAN",
       title: "Perjalanan Saya",
-
-      current: {
-        year: "Sekarang",
-        role: "Terbuka untuk Peluang",
-        description:
-          "Sedang mencari kesempatan untuk berkontribusi, belajar, dan berkembang sebagai Fullstack Developer.",
+      subtitle:
+        "Garis waktu perjalanan profesional saya, mulai dari belajar dan mencari pengalaman hingga membangun proyek dunia nyata.",
+      cards: {
+        intern: {
+          description:
+            "Mengikuti program Studi Independen MSIB dengan fokus pengembangan Frontend & Backend Web. Membangun aplikasi web modern, mengintegrasikan API, dan menerapkan best practice dalam pengembangan perangkat lunak.",
+        },
+        pkl: {
+          role: "IT / Web Development",
+          company: "PKL",
+          description:
+            "Bekerja dalam proyek pengembangan web dan sistem, termasuk SI Jalan dan alat internal. Mendapatkan pengalaman dalam integrasi frontend, backend, dan basis data.",
+        },
+        current: {
+          year: "Sekarang",
+          role: "Terbuka untuk Peluang",
+          company: "Tersedia",
+          description:
+            "Sedang mencari kesempatan untuk berkontribusi, belajar, dan berkembang sebagai Fullstack Developer.",
+        },
       },
     },
 

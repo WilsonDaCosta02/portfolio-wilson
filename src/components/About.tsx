@@ -224,7 +224,7 @@ export const About: React.FC = () => {
       {/* Tech Stack Content */}
       <div>
         <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-          <div className="-translate-y-32 grid gap-6 lg:grid-cols-[1fr_1.1fr_1.1fr_0.8fr_1fr_1fr]">
+          <div className="-translate-y-32 -mb-30 grid gap-6 lg:grid-cols-[1fr_1.1fr_1.1fr_0.8fr_1fr_1fr]">
             {/* TITLE */}
             <div className="translate-y-2">
               <div className="mb-3 flex items-center gap-2">
