@@ -143,6 +143,9 @@ export const translations = {
       title: "Have a project in mind?",
       description:
         "Let's build something amazing together. I'm always open to new opportunities and collaborations.",
+      cardTitle: "Open for Work",
+      cardDescription:
+        "My inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
       getInTouch: "Get in Touch",
       emailMe: "Email Me",
     },
@@ -292,6 +295,9 @@ export const translations = {
       title: "Punya proyek dalam pikiran?",
       description:
         "Mari membangun sesuatu yang luar biasa bersama. Saya selalu terbuka untuk peluang dan kolaborasi baru.",
+      cardTitle: "Terbuka untuk Bekerja",
+      cardDescription:
+        "Kotak masuk saya selalu terbuka. Baik ada pertanyaan, penawaran proyek, atau sekadar menyapa, saya siap merespons secepatnya!",
       getInTouch: "Hubungi Saya",
       emailMe: "Kirim Email",
     },

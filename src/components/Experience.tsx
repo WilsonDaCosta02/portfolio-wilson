@@ -7,7 +7,7 @@ const Experience: React.FC = () => {
   return (
     <section
       id="experience"
-      className="relative min-h-screen scroll-mt-24 overflow-hidden border-t"
+      className="relative scroll-mt-24 overflow-hidden border-t py-16 lg:py-20"
       style={{
         backgroundColor: "var(--background)",
         color: "var(--foreground)",
@@ -18,7 +18,7 @@ const Experience: React.FC = () => {
       <div className="pointer-events-none absolute left-0 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-emerald-400/5 blur-3xl" />
       <div className="pointer-events-none absolute right-0 top-0 h-96 w-96 rounded-full bg-emerald-400/[0.03] blur-3xl" />
 
-      <div className="relative mx-auto flex min-h-screen max-w-[1600px] -translate-y-20 flex-col justify-center px-6 py-24 lg:px-10 xl:px-14">
+      <div className="relative mx-auto max-w-[1600px] px-6 lg:px-10 xl:px-14">
         {/* SECTION HEADER */}
         <div className="mb-12 flex items-end justify-between gap-8 lg:mb-16">
           <div>
