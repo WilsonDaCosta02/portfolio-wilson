@@ -276,28 +276,30 @@ function Navbar() {
           <button
             type="button"
             onClick={() => setIsMenuOpen((current) => !current)}
-            aria-label="Open navigation menu"
+            aria-label={
+              isMenuOpen ? "Close navigation menu" : "Open navigation menu"
+            }
             aria-expanded={isMenuOpen}
-            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-lg border"
+            className="relative flex h-10 w-10 items-center justify-center rounded-lg border"
             style={{
               borderColor: "var(--border)",
             }}
           >
             <span
-              className={`h-px w-4 bg-current transition-transform duration-300 ${
-                isMenuOpen ? "translate-y-1 rotate-45" : ""
+              className={`absolute h-px w-4 bg-current transition-all duration-300 ease-in-out ${
+                isMenuOpen ? "rotate-45" : "-translate-y-[5px] rotate-0"
               }`}
             />
 
             <span
-              className={`h-px w-4 bg-current transition-opacity duration-300 ${
-                isMenuOpen ? "opacity-0" : ""
+              className={`absolute h-px w-4 bg-current transition-all duration-200 ${
+                isMenuOpen ? "opacity-0" : "opacity-100"
               }`}
             />
 
             <span
-              className={`h-px w-4 bg-current transition-transform duration-300 ${
-                isMenuOpen ? "-translate-y-1 -rotate-45" : ""
+              className={`absolute h-px w-4 bg-current transition-all duration-300 ease-in-out ${
+                isMenuOpen ? "-rotate-45" : "translate-y-[5px] rotate-0"
               }`}
             />
           </button>
