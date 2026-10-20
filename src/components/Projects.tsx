@@ -313,7 +313,7 @@ function Projects() {
                 <h3 className="text-lg font-bold">Travel Planner</h3>
 
                 {/* Repository Button */}
-                <div className="relative">
+                <div className="relative" data-repo-popup>
                   <button
                     type="button"
                     onClick={() =>
@@ -355,10 +355,6 @@ function Projects() {
                         rel="noopener noreferrer"
                         className="block rounded-md px-2 py-2 text-xs transition-colors hover:bg-emerald-400/10 hover:text-emerald-400"
                         style={{ color: "var(--foreground)" }}
-                        onClick={(e) => {
-                          e.stopPropagation(); // <-- Ini kunci utamanya agar browser tidak "menelan" aksi klik link
-                          setOpenRepo(null);
-                        }}
                       >
                         Frontend ↗
                       </a>
@@ -370,10 +366,6 @@ function Projects() {
                         rel="noopener noreferrer"
                         className="block rounded-md px-2 py-2 text-xs transition-colors hover:bg-emerald-400/10 hover:text-emerald-400"
                         style={{ color: "var(--foreground)" }}
-                        onClick={(e) => {
-                          e.stopPropagation(); // <-- Ini juga
-                          setOpenRepo(null);
-                        }}
                       >
                         Backend ↗
                       </a>
