@@ -392,7 +392,7 @@ function Projects() {
 
               {/* Tech */}
               <div className="mt-2 flex flex-wrap gap-1">
-                {["Flutter", "Dart", "Node.js", "REST API", "MySql"].map(
+                {["Flutter", "Dart", "Node.js", "GraphQL", "MySql"].map(
                   (tech) => (
                     <span
                       key={tech}
