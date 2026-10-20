@@ -354,10 +354,11 @@ function Projects() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block rounded-md px-2 py-2 text-xs transition-colors hover:bg-emerald-400/10 hover:text-emerald-400"
-                        style={{
-                          color: "var(--foreground)",
+                        style={{ color: "var(--foreground)" }}
+                        onClick={(e) => {
+                          e.stopPropagation(); // <-- Ini kunci utamanya agar browser tidak "menelan" aksi klik link
+                          setOpenRepo(null);
                         }}
-                        onClick={() => setOpenRepo(null)}
                       >
                         Frontend ↗
                       </a>
@@ -368,10 +369,11 @@ function Projects() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block rounded-md px-2 py-2 text-xs transition-colors hover:bg-emerald-400/10 hover:text-emerald-400"
-                        style={{
-                          color: "var(--foreground)",
+                        style={{ color: "var(--foreground)" }}
+                        onClick={(e) => {
+                          e.stopPropagation(); // <-- Ini juga
+                          setOpenRepo(null);
                         }}
-                        onClick={() => setOpenRepo(null)}
                       >
                         Backend ↗
                       </a>
